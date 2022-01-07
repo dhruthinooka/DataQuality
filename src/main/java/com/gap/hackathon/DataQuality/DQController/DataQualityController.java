@@ -1,7 +1,7 @@
 package com.gap.hackathon.DataQuality.DQController;
 
 import com.gap.hackathon.DataQuality.DQService.DataQualityService;
-import com.gap.hackathon.DataQuality.Model.DataValidation;
+import com.gap.hackathon.DataQuality.Model.DataValidation1;
 import com.gap.hackathon.DataQuality.Model.ErrorCountDetails;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +22,9 @@ public class DataQualityController {
     }
 
     @GetMapping("/fetchErrorData")
-    public List<DataValidation> fetchErrorData(@RequestParam String errorCode) {
+    public List<DataValidation1> fetchErrorData(@RequestParam String errorCode) {
         return dataQualityService.fetchErrorDataByErrorCode(errorCode);
+//        System.out.println("Controller");
+//        return "Response from fetchErrorData";
     }
 }
