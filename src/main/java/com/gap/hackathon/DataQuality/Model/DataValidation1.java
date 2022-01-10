@@ -15,9 +15,9 @@ import java.util.Date;
 @AllArgsConstructor
 public class DataValidation1 {
 
-    private int orderId;
+    private Integer orderId;
 
-    private int customerId;
+    private Integer customerId;
 
     private String errorCode;
 
@@ -34,10 +34,10 @@ public class DataValidation1 {
     private String lastName;
 
 
-    private double netSaleAmt;
+    private Double netSaleAmt;
 
 
-    private Date transactionDate;
+    private String transactionDate;
 
 
     private String storeLocationCode;
