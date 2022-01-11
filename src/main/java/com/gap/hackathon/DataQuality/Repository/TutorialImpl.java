@@ -1,15 +1,16 @@
 package com.gap.hackathon.DataQuality.Repository;
 
-import com.gap.hackathon.DataQuality.Model.DataValidation;
-import com.gap.hackathon.DataQuality.Model.DataValidation1;
-import com.gap.hackathon.DataQuality.Model.ErrorCountDetails;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.IncorrectResultSizeDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import com.gap.hackathon.DataQuality.Model.DataValidation1;
+import com.gap.hackathon.DataQuality.Model.ErrorCountDetails;
+import com.gap.hackathon.DataQuality.mapper.DataQualityRowMapper;
 @Repository
 public class TutorialImpl implements Tutorial{
 
@@ -29,7 +30,14 @@ public class TutorialImpl implements Tutorial{
     }
 
     @Override
+
+
+
     public List<DataValidation1> findByErrorCode(String errorCode) {
-        return jdbcTemplate.query("SELECT * from DATA_VALIDATE where ERROR_CODE=?", BeanPropertyRowMapper.newInstance(DataValidation1.class), errorCode);
+
+    	return jdbcTemplate.query("SELECT * from DATA_VALIDATE where ERROR_CODE=?",new Object[] { errorCode },new DataQualityRowMapper());
+
+
+
     }
 }

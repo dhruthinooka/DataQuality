@@ -5,10 +5,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Table;
-import java.util.Date;
-
 @Getter
 @Setter
 @NoArgsConstructor
@@ -26,12 +22,6 @@ public class DataValidation1 {
 
 
     private String errorType;
-
-
-    private String firstName;
-
-
-    private String lastName;
 
 
     private Double netSaleAmt;
